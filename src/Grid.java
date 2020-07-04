@@ -38,6 +38,15 @@ public class Grid {
 				ownedSet = findSet(top);
 			}
 		}
+		
+		BlockLocation leftLocation = new BlockLocation(b.getX() - 1, b.getY());
+		Block left = blockMap.get(leftLocation);
+		if (left != null && left.getColor().equals(b.getColor())) {
+			if (left.isVisited() && ownedSet == null) {
+				ownedSet = findSet(left);
+			}
+		}
+		
 		BlockLocation bottomLocation = new BlockLocation(b.getX(), b.getY() + 1);
 		Block bottom = blockMap.get(bottomLocation);
 		if (bottom != null && bottom.getColor().equals(b.getColor())) {
@@ -46,13 +55,7 @@ public class Grid {
 			}
 		}
 
-		BlockLocation leftLocation = new BlockLocation(b.getX() - 1, b.getY());
-		Block left = blockMap.get(leftLocation);
-		if (left != null && left.getColor().equals(b.getColor())) {
-			if (left.isVisited() && ownedSet == null) {
-				ownedSet = findSet(left);
-			}
-		}
+		
 
 		BlockLocation rightLocation = new BlockLocation(b.getX() + 1, b.getY());
 
