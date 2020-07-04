@@ -1,0 +1,15 @@
+To run the programme 
+
+Run GridSearch class with right parameters to the main method.
+It will print the largest block
+
+Design
+1.Block class encapsulate properties of block
+2.Color enum to define colors
+3.BlockLocation is used to encapsulate x y coordinates to acces block directly from map
+4.Grid class will hold all blocks with block location.Here compostion is used
+5.processNeigbours in Grid class holds main logic to process neigbours and building totalIndependantSets of blocks
+6.Hashcode and equals is used to find in map and find in set
+7.OOP principles are implemented
+8.GridSearch is the main class and you input coordinates in the form of  Map<BlockLocation, Block>
+
